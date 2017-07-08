@@ -1,5 +1,31 @@
 # docker-stacks
 
+***
+## Custom use TL;DR
+
+Fetch latest changes from upstream and update your origin
+```
+git fetch upstream
+git checkout master
+git rebase upstream/master
+git push -f origin master
+```
+
+Build a docker image
+```
+docker build -t anooprh/all-spark-notebook all-spark-notebook
+```
+
+Run the docker image in interactive mode, mapping `./workspace` directory to `/home/jovyan/workspace` directory in the docker container.
+```
+docker run -it --rm -p 8888:8888 -v ${pwd}/workspace:/home/jovyan/workspace anooprh/all-spark-notebook  start-notebook.sh --NotebookApp.token=''
+```
+
+Contain work to the `workspace/` directory and head over to http://localhost:8888/tree/workspace !! Enjoy
+
+
+***
+
 [![Build Status](https://travis-ci.org/jupyter/docker-stacks.svg?branch=master)](https://travis-ci.org/jupyter/docker-stacks)
 [![Join the chat at https://gitter.im/jupyter/jupyter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jupyter/jupyter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 

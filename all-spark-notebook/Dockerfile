@@ -35,3 +35,13 @@ RUN jupyter toree install --sys-prefix
 RUN conda install --quiet --yes 'spylon-kernel=0.4*' && \
     conda clean -tipsy
 RUN python -m spylon_kernel install --sys-prefix
+
+# install jupyter extensions
+RUN conda install --quiet --yes -c conda-forge jupyter_contrib_nbextensions
+RUN conda install --quiet --yes -c conda-forge jupyter_nbextensions_configurator
+
+# Install Python 3 Tensorflow
+RUN conda install --quiet --yes 'tensorflow=1.0*'
+
+# Install Python 2 Tensorflow
+RUN conda install --quiet --yes -n python2 'tensorflow=1.0*'

@@ -66,5 +66,5 @@ dockerspawner
 dockerspawner.tar.gz
 *.orig
 
-# ipynb checkpoints
+# Jupyter checkpoints
 .ipynb_checkpoints

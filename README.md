@@ -18,7 +18,7 @@ docker build -t anooprh/all-spark-notebook all-spark-notebook
 
 Run the docker image in interactive mode, mapping `./workspace` directory to `/home/jovyan/workspace` directory in the docker container.
 ```
-docker run -it --rm -p 8888:8888 -v ${pwd}/workspace:/home/jovyan/workspace anooprh/all-spark-notebook  start-notebook.sh --NotebookApp.token=''
+docker run -it --rm -p 8888:8888 -v $(pwd)/workspace:/home/jovyan/workspace anooprh/all-spark-notebook  start-notebook.sh --NotebookApp.token=''
 ```
 
 Contain work to the `workspace/` directory and head over to http://localhost:8888/tree/workspace !! Enjoy

@@ -12,7 +12,7 @@ fi
 
 . /usr/local/bin/start.sh jupyterhub-singleuser \
   --port=${JPY_PORT:-8888} \
-  --ip=0.0.0.0 \
+  --ip=127.0.0.1 \
   --user=$JPY_USER \
   --cookie-name=$JPY_COOKIE_NAME \
   --base-url=$JPY_BASE_URL \
